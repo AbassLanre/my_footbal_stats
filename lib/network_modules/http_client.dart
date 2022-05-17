@@ -16,7 +16,7 @@ class HttpClient {
 
     var uri = APIBase.baseUrl + url + ((params != null) ? this.queryParameters(params) : "");
     const Map<String, String> header = {
-      "X-RapidAPI-Key": "b935dba6c0msh2961d00e80f1d82p1d8281jsnde767b877218",
+      "X-RapidAPI-Key": "----------------",
       "X-RapidAPI-Host": "football98.p.rapidapi.com",
     };
     try {
