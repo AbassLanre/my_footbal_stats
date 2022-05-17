@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_footbal_stats/network_modules/api_response.dart';
-import 'package:my_footbal_stats/providers/premierLeagueTableProvider.dart';
+import 'package:my_footbal_stats/providers/fixturesProvider.dart';
+import 'package:my_footbal_stats/providers/leagueTableProvider.dart';
+import 'package:my_footbal_stats/providers/newsProvider.dart';
 import 'package:provider/provider.dart';
 
 
@@ -18,14 +20,14 @@ class PremierLeagueTableScreen extends StatelessWidget {
   }
 
   Widget table(BuildContext context) {
-    return Consumer<PremierLeagueTableProvider>(builder: (context, myTable, child) {
-      if (myTable.premierLeagueTable?.status == Status.COMPLETED) {
-        return Text("${myTable.premierLeagueTable?.data?[0].name}");
+    return Consumer<FixturesProvider>(builder: (context, myTable, child) {
+      if (myTable.premierLeagueFixtures?.status == Status.COMPLETED) {
+        return Text("${myTable.premierLeagueFixtures?.data?[0].awayTeam}");
       }
-      else if (myTable.premierLeagueTable?.status == Status.ERROR) {
-        return Text("Error : ${myTable.premierLeagueTable?.message}");
+      else if (myTable.premierLeagueFixtures?.status == Status.ERROR) {
+        return Text("Error : ${myTable.premierLeagueFixtures?.message}");
       } else {
-        return Text("${myTable.premierLeagueTable?.message}");
+        return Text("${myTable.premierLeagueFixtures?.message}");
       }
     });
   }

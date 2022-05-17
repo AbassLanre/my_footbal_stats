@@ -1,15 +1,10 @@
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
-
-import 'package:flutter/cupertino.dart';
-import 'package:my_footbal_stats/models/table_model.dart';
-import 'package:my_footbal_stats/network_modules/api_response.dart';
-
-import 'api_base.dart';
+import 'package:my_footbal_stats/network_modules/api_base.dart';
+import 'package:my_footbal_stats/network_modules/api_exceptions.dart';
 import 'package:http/http.dart' as http;
 
-import 'api_exceptions.dart';
 
 class HttpClient {
   static final HttpClient _singleton = HttpClient();

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_footbal_stats/providers/premierLeagueTableProvider.dart';
+import 'package:my_footbal_stats/providers/fixturesProvider.dart';
+import 'package:my_footbal_stats/providers/leagueTableProvider.dart';
+import 'package:my_footbal_stats/providers/newsProvider.dart';
 import 'package:my_footbal_stats/views/premierLeagueTableScreen.dart';
 import 'package:provider/provider.dart';
 
@@ -14,7 +16,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (context)=> PremierLeagueTableProvider())
+        ChangeNotifierProvider(create: (context)=> LeagueTableProvider()),
+        ChangeNotifierProvider(create: (context)=> NewsProvider()),
+        ChangeNotifierProvider(create: (context)=> FixturesProvider()),
+
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
