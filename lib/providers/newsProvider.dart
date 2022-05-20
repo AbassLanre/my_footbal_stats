@@ -25,11 +25,11 @@ class NewsProvider with ChangeNotifier{
 
   NewsProvider(){
     _newsRepository = NewsRepository();
-    fetchPremierLeagueNews();
-    fetchLaLigaNews();
-    fetchSerieANews();
-    fetchBundesligaNews();
-    fetchLigue1News();
+    // fetchPremierLeagueNews();
+    // fetchLaLigaNews();
+    // fetchSerieANews();
+    // fetchBundesligaNews();
+    // fetchLigue1News();
 
   }
 

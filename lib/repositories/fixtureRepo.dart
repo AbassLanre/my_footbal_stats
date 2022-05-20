@@ -13,7 +13,7 @@ class FixtureRepository {
     // the fixture was nested in matchday 38
     List<Map<String, dynamic>> map = [];
     map = List<Map<String, dynamic>>.from(response);
-    debugPrint("--------------------------Response - ${map[0][" Matchday 38 "]}");
+    debugPrint("--------------------------Response - ${map[0][" Matchday $matchDay "]}");
     final lists = <PremierLeagueFixtures>[];
     for(var item in map[0][" Matchday $matchDay "]){
       final list = PremierLeagueFixtures.fromJson(item);
@@ -28,7 +28,7 @@ class FixtureRepository {
     // the fixture was nested in matchday 38
     List<Map<String, dynamic>> map = [];
     map = List<Map<String, dynamic>>.from(response);
-    debugPrint("--------------------------Response - ${map[0][" Matchday 38 "]}");
+    debugPrint("--------------------------Response - ${map[0][" Matchday $matchDay "]}");
     final lists = <LaLigaFixtures>[];
     for(var item in map[0][" Matchday $matchDay "]){
       final list = LaLigaFixtures.fromJson(item);
@@ -43,7 +43,7 @@ class FixtureRepository {
     // the fixture was nested in matchday 38
     List<Map<String, dynamic>> map = [];
     map = List<Map<String, dynamic>>.from(response);
-    debugPrint("--------------------------Response - ${map[0][" Matchday 38 "]}");
+    debugPrint("--------------------------Response - ${map[0][" Matchday $matchDay "]}");
     final lists = <SerieAFixtures>[];
     for(var item in map[0][" Matchday $matchDay "]){
       final list = SerieAFixtures.fromJson(item);
@@ -58,7 +58,7 @@ class FixtureRepository {
     // the fixture was nested in matchday 38
     List<Map<String, dynamic>> map = [];
     map = List<Map<String, dynamic>>.from(response);
-    debugPrint("--------------------------Response - ${map[0][" Matchday 38 "]}");
+    debugPrint("--------------------------Response - ${map[0][" Matchday $matchDay "]}");
     final lists = <BundesligaFixtures>[];
     for(var item in map[0][" Matchday $matchDay "]){
       final list = BundesligaFixtures.fromJson(item);
@@ -73,7 +73,7 @@ class FixtureRepository {
     // the fixture was nested in matchday 38
     List<Map<String, dynamic>> map = [];
     map = List<Map<String, dynamic>>.from(response);
-    debugPrint("--------------------------Response - ${map[0][" Matchday 38 "]}");
+    debugPrint("--------------------------Response - ${map[0][" Matchday $matchDay "]}");
     final lists = <Ligue1Fixtures>[];
     for(var item in map[0][" Matchday $matchDay "]){
       final list = Ligue1Fixtures.fromJson(item);

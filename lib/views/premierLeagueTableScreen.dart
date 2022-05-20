@@ -6,29 +6,32 @@ import 'package:my_footbal_stats/providers/newsProvider.dart';
 import 'package:provider/provider.dart';
 
 
-class PremierLeagueTableScreen extends StatelessWidget {
+class PremierLeagueTableScreen extends StatefulWidget {
   const PremierLeagueTableScreen({Key? key}) : super(key: key);
 
   @override
+  State<PremierLeagueTableScreen> createState() => _PremierLeagueTableScreenState();
+}
+
+class _PremierLeagueTableScreenState extends State<PremierLeagueTableScreen> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Premier League')),
-      body: Container(
-          padding: const EdgeInsets.all(20), child: table(context)),
+      body: Container(),
     );
 
   }
 
-  Widget table(BuildContext context) {
-    return Consumer<FixturesProvider>(builder: (context, myTable, child) {
-      if (myTable.premierLeagueFixtures?.status == Status.COMPLETED) {
-        return Text("${myTable.premierLeagueFixtures?.data?[0].awayTeam}");
-      }
-      else if (myTable.premierLeagueFixtures?.status == Status.ERROR) {
-        return Text("Error : ${myTable.premierLeagueFixtures?.message}");
-      } else {
-        return Text("${myTable.premierLeagueFixtures?.message}");
-      }
-    });
-  }
+  // Widget table(BuildContext context) {
+  //   return Consumer<FixturesProvider>(builder: (context, myTable, child) {
+  //     if (myTable.premierLeagueFixtures?.status == Status.COMPLETED) {
+  //       return Text("${myTable.premierLeagueFixtures?.data?[0].awayTeam}");
+  //     }
+  //     else if (myTable.premierLeagueFixtures?.status == Status.ERROR) {
+  //       return Text("Error : ${myTable.premierLeagueFixtures?.message}");
+  //     } else {
+  //       return Text("it's ${myTable.premierLeagueFixtures?.message}");
+  //     }
+  //   });
+  // }
 }
