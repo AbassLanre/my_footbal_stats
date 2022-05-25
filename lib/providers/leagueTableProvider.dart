@@ -27,11 +27,11 @@ class LeagueTableProvider with ChangeNotifier{
   //with no set only get
   LeagueTableProvider() {
     _tableRepository = TableRepository();
-    // fetchPremierLeagueTable();
-    // fetchLaLigaTable();
-    // fetchSerieATable();
-    // fetchBundesligaTable();
-    // fetchLigue1Table();
+    fetchPremierLeagueTable();
+    fetchLaLigaTable();
+    fetchSerieATable();
+    fetchBundesligaTable();
+    fetchLigue1Table();
 
   }
   //but normal providers should have their set and get as normal

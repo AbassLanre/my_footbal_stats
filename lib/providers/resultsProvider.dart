@@ -26,11 +26,11 @@ class ResultsProvider with ChangeNotifier{
 
   ResultsProvider(){
     _resultRepository = ResultRepository();
-    // fetchPremierLeagueResults();
-    // fetchLaLigaResults();
-    // fetchBundesligaResults();
-    // fetchSerieAResults();
-    // fetchLigue1Results();
+    fetchPremierLeagueResults();
+    fetchLaLigaResults();
+    fetchBundesligaResults();
+    fetchSerieAResults();
+    fetchLigue1Results();
 
   }
 
