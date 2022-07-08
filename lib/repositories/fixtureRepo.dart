@@ -25,7 +25,7 @@ class FixtureRepository {
   Future<List<LaLigaFixtures>> fetchLaLigaFixtures(String matchDay) async{
     final response = await HttpClient.instance
         .fetchData(APIPathHelper.getPath(APIPath.laligaFixtures));
-    // fixture was nested in matchday 38
+    // fixture was nested matchday 38
     List<Map<String, dynamic>> map = [];
     map = List<Map<String, dynamic>>.from(response);
     debugPrint("--------------------------Response - ${map[0][" Matchday $matchDay "]}");
