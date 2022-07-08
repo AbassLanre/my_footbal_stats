@@ -7,6 +7,8 @@ import 'package:my_footbal_stats/views/Leagues/News.dart';
 import 'package:my_footbal_stats/views/Leagues/SerieAScreen.dart';
 import 'package:my_footbal_stats/views/Leagues/ligue1Screen.dart';
 import 'package:my_footbal_stats/views/Table.dart';
+import 'package:my_footbal_stats/views/fixtures.dart';
+import 'package:my_footbal_stats/views/results.dart';
 
 class PremierLeagueScreen extends StatefulWidget {
   const PremierLeagueScreen({Key? key}) : super(key: key);
@@ -32,10 +34,10 @@ class _PremierLeagueScreenState extends State<PremierLeagueScreen>
   }
 
   final List<Widget> _list = <Widget>[
-    LeagueNews(),
-    LeagueTable(),
-    Center(child: Text("Results")),
-    Center(child: Text("Fixtures")),
+    Center(child: Text('ff')),
+    Center(child: Text("ff")),
+    Center(child: LeagueResults()),
+    Center(child: LeagueFixtures()),
   ];
   int _curr = 0;
 

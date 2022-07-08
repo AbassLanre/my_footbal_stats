@@ -7,7 +7,7 @@ import 'package:my_footbal_stats/repositories/resultRepo.dart';
 
 class ResultsProvider with ChangeNotifier{
 
-  ResultRepository? _resultRepository;
+  ResultRepository? _resultRepository = ResultRepository();
 
   ApiResponse<List<PremierLeagueResults>>? _premierLeagueResult;
   ApiResponse<List<PremierLeagueResults>>? get premierLeagueResult => _premierLeagueResult;
@@ -24,22 +24,24 @@ class ResultsProvider with ChangeNotifier{
   ApiResponse<List<Ligue1Results>>? _ligue1Result;
   ApiResponse<List<Ligue1Results>>? get ligue1Result => _ligue1Result;
 
-  ResultsProvider(){
-    _resultRepository = ResultRepository();
-    fetchPremierLeagueResults();
-    fetchLaLigaResults();
-    fetchBundesligaResults();
-    fetchSerieAResults();
-    fetchLigue1Results();
+  /// Dont do this againnnnnnnnn
+  // ResultsProvider(){
+  //   _resultRepository = ResultRepository();
+  //   fetchPremierLeagueResults(matchDay);
+  //   // fetchLaLigaResults();
+  //   // fetchBundesligaResults();
+  //   // fetchSerieAResults();
+  //   // fetchLigue1Results();
+  //
+  // }
 
-  }
 
-  void fetchPremierLeagueResults() async{
+  void fetchPremierLeagueResults(String? matchDay) async{
     _premierLeagueResult = ApiResponse.loading('loading... ');
     notifyListeners();
     try {
 
-      List<PremierLeagueResults>? premierLeagueResult = await _resultRepository?.fetchPremierLeagueResults("38");
+      List<PremierLeagueResults>? premierLeagueResult = await _resultRepository?.fetchPremierLeagueResults(matchDay);
       _premierLeagueResult = ApiResponse.completed(premierLeagueResult);
       notifyListeners();
     } catch (e) {

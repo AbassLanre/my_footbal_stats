@@ -6,7 +6,8 @@ import 'package:my_footbal_stats/network_modules/api_response.dart';
 import 'package:my_footbal_stats/repositories/fixtureRepo.dart';
 
 class FixturesProvider with ChangeNotifier{
-  FixtureRepository? _fixtureRepository;
+
+  FixtureRepository? _fixtureRepository = FixtureRepository();
 
   ApiResponse<List<PremierLeagueFixtures>>? _premierLeagueFixtures;
   ApiResponse<List<PremierLeagueFixtures>>? get premierLeagueFixtures => _premierLeagueFixtures;
@@ -23,21 +24,21 @@ class FixturesProvider with ChangeNotifier{
   ApiResponse<List<Ligue1Fixtures>>? _ligue1Fixtures;
   ApiResponse<List<Ligue1Fixtures>>? get ligue1Fixtures => _ligue1Fixtures;
 
-  FixturesProvider(){
-    _fixtureRepository = FixtureRepository();
-    fetchPremierLeagueFixtures();
-    fetchLaLigaFixtures();
-    fetchBundesligaFixtures();
-    fetchSerieAFixtures();
-    fetchLigue1Fixtures();
-  }
+  // FixturesProvider(){
+  //   _fixtureRepository = FixtureRepository();
+  //   fetchPremierLeagueFixtures(matchDay);
+  //   fetchLaLigaFixtures();
+  //   fetchBundesligaFixtures();
+  //   fetchSerieAFixtures();
+  //   fetchLigue1Fixtures();
+  // }
 
-  void fetchPremierLeagueFixtures() async{
+  void fetchPremierLeagueFixtures(String? matchDay) async{
     _premierLeagueFixtures = ApiResponse.loading('loading... ');
     notifyListeners();
     try {
 
-      List<PremierLeagueFixtures>? premierLeagueFixtures = await _fixtureRepository?.fetchPremierLeagueFixtures("38");
+      List<PremierLeagueFixtures>? premierLeagueFixtures = await _fixtureRepository?.fetchPremierLeagueFixtures(matchDay);
       _premierLeagueFixtures = ApiResponse.completed(premierLeagueFixtures);
       notifyListeners();
     } catch (e) {

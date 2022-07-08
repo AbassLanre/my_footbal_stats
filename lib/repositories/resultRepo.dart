@@ -7,7 +7,8 @@ import 'package:my_footbal_stats/network_modules/http_client.dart';
 
 class ResultRepository{
 
-  Future<List<PremierLeagueResults>> fetchPremierLeagueResults(String matchDay) async{
+  Future<List<PremierLeagueResults>> fetchPremierLeagueResults(String? matchDay) async{
+    print(matchDay);
     final response = await HttpClient.instance
         .fetchData(APIPathHelper.getPath(APIPath.premierLeagueResults));
     // the result was nested in matchday 38

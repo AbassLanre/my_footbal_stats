@@ -7,10 +7,10 @@ import 'package:my_footbal_stats/network_modules/http_client.dart';
 
 class FixtureRepository {
 
-  Future<List<PremierLeagueFixtures>> fetchPremierLeagueFixtures(String matchDay) async{
+  Future<List<PremierLeagueFixtures>> fetchPremierLeagueFixtures(String? matchDay) async{
     final response = await HttpClient.instance
         .fetchData(APIPathHelper.getPath(APIPath.premierLeagueFixtures));
-    // the fixture was nested in matchday 38
+    // fixture was nested in matchday 38
     List<Map<String, dynamic>> map = [];
     map = List<Map<String, dynamic>>.from(response);
     debugPrint("--------------------------Response - ${map[0][" Matchday $matchDay "]}");
